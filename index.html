@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Navideña</title>
+    <link rel="icon" href="d14c5733400bac413e17bac0631585ef.ico" type="image/x-icon"> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <video autoplay loop muted id="video_background">
+        <source src="6173307-hd_1920_1080_30fps.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+
+    <div class="container">
+        <div class="texto-container">
+            <h1>¿Qué regalar a Micaela en esta Navidad?</h1>
+        </div>
+        <!-- Imagen en movimiento -->
+        <div class="imagen-container">
+            <img src="d14c5733400bac413e17bac0631585ef.png" alt="Navidad" class="imagen-movimiento"> <!-- Cambia 'imagen1.jpg' por tu imagen -->
+        </div>
+
+
+
+
+        <!-- Botones -->
+        <div class="botones-container">
+            <div class="botones-lista">
+                <a href="https://auto.mercadolibre.com.ar/MLA-1971270672-toyota-hilux-srv-4x4-mt-permuta-amarok-s10-ranger-j-_JM#polycard_client=search-nordic&position=9&search_layout=grid&type=item&tracking_id=cb9ab4bd-1b91-491f-81de-f5d99e471551" class="boton rojo" target="_blank" rel="noopener noreferrer">Opción 1</a>
+                <a href="https://casa.mercadolibre.com.ar/MLA-1903993398-vendo-casa-en-brisanova-pueblo-eshter-_JM#polycard_client=search-nordic&position=9&search_layout=grid&type=item&tracking_id=82496892-4df0-4875-9f06-cd634ffea68d" class="boton verde" target="_blank" rel="noopener noreferrer">Opción 2</a>
+                <a href="https://articulo.mercadolibre.com.ar/MLA-1943181014-mini-refrigerador-coca-cola-10-l-portatil-rojo-dormitorio-_JM#polycard_client=search-nordic&position=7&search_layout=stack&type=item&tracking_id=346e15e6-fff5-43b4-a0f8-9c41d297a739" class="boton rojo" target="_blank" rel="noopener noreferrer">Opción 3</a>
+            </div>
+        </div>
+    </div>
+
+
+    <audio id="musica" src="Los Bukis - Navidad sin ti remix.mp3" loop></audio>
+
+    <a href="#" class="btn-flotante" onclick="toggleMusic()">
+        <i id="playPauseIcon" class="fas fa-play"></i> <!-- Icono de Play -->
+    </a>
+    <div id="snow"></div>
+    <script src="script.js"></script>
+</body>
+</html>

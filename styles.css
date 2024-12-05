@@ -1,0 +1,209 @@
+body {
+    margin: 0; /* Elimina márgenes por defecto */
+    font-family:"Imperial Script";
+    text-align: center;
+    overflow: auto; /* Evita el scroll */
+    color: #ffffff;
+}
+
+.imperial-script-regular {
+    font-family: "Imperial Script", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+#video_background {
+    position: fixed; /* Fija el video en la pantalla */
+    top: 0; /* Alinea la parte superior */
+    left: 0; /* Alinea la parte izquierda */
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    z-index: -1000; /* Envía el video detrás de otros elementos */
+    object-fit: cover; /* Cubre todo el fondo sin distorsionar */
+}
+
+.container {
+    position: relative; /* Posiciona el contenedor relativo al video */
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto auto auto;
+    
+}
+
+h2 {
+    color: #ffffff; /* Cambia el color del texto para mejorar la visibilidad */
+}
+
+.imagen-container {
+    margin: 20px 0; /* Espacio superior e inferior para la imagen */
+    grid-column: 1/3;
+    grid-row: 1/5;
+    
+}
+
+.texto-container {
+    grid-column: 3/5;
+    grid-row: 1/3;
+    font-size: 1.5rem;
+    
+}
+
+.imagen-movimiento {
+    width: 300px; /* Ajusta el tamaño según sea necesario */
+    animation: mover 5s infinite alternate;
+}
+
+@keyframes mover {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.botones-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    grid-column: 3/5;
+    grid-row: 3/5;
+}
+
+.botones-lista {
+    display: flex;
+    flex-direction: column; /* Coloca los botones en columna */
+}
+
+.boton {
+    display: inline-block;
+    padding: 10px 15px;
+    margin: 5px 0; /* Espacio entre los botones */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 27px;
+}
+
+.rojo {
+    background-color: #ff0000; /* Color de fondo rojo */
+}
+
+.verde {
+    background-color: #00ff00; /* Color de fondo verde */
+}
+
+/* Cambiar color al pasar el mouse */
+.boton:hover {
+    opacity: 0.8; /* Efecto de opacidad al pasar el mouse */
+}
+
+.btn-flotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #BD0808;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#snow {
+    position: fixed; /* Fijo para cubrir toda la pantalla */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Para que no interfiera con otros elementos */
+    z-index: 999; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+
+
+.snowflake {
+    position: absolute;
+    top: -10px; /* Comienza fuera de la vista */
+    background-image: url('snowflake-decorations-free-png.png'); /* Cambia esto a la ruta de tu imagen */
+    background-size: contain;
+    width: 30px; /* Ajusta el tamaño del copo */
+    height: 30px; /* Ajusta el tamaño del copo */
+    opacity: 0.8; /* Opacidad del copo */
+    animation: fall linear infinite; /* Animación para que caiga */
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh); /* Caer hasta el fondo */
+    }
+}
+
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px; /* Reduce el padding en móviles */
+        text-align: center; /* Centra el texto */
+    }
+
+    .imagen-movimiento {
+        width: 100%; /* Hace que la imagen ocupe el 100% del ancho */
+        height: auto; /* Mantiene la proporción de la imagen */
+    }
+
+    .botones-lista {
+        flex-direction: column; /* Coloca los botones en columna */
+        align-items: center; /* Centra los botones */
+    }
+
+    .boton {
+        width: 80%; /* Botones más anchos en móviles */
+        margin: 5px 0; /* Espacio entre botones */
+    }
+
+    .imagen-container {
+        margin: 20px 0; /* Espacio superior e inferior para la imagen */
+        grid-column: 2/4;
+        grid-row: 1/3;
+        
+    }
+    
+    .texto-container {
+        grid-column: 1/5;
+        grid-row: 3/4;
+        font-size: 1rem;
+        
+    }
+    .botones-container {
+        display: flex;
+        justify-content: center; /* Centra los botones horizontalmente */
+        grid-column: 2/4;
+        grid-row: 4/5;
+    }
+}
+
+
+/* Media Query para tabletas (pantallas medianas) */
+@media (min-width: 601px) and (max-width: 900px) {
+    .container {
+        padding: 20px; /* Padding moderado para tabletas */
+    }
+
+    .imagen-movimiento {
+        width: 80%; /* Imagen más pequeña en tabletas */
+    }
+
+    .boton {
+        width: 60%; /* Botones más estrechos en tabletas */
+    }
+}
+
+/* Media Query para pantallas grandes (escritorios) */
+@media (min-width: 901px) {
+    .container {
+        padding: 40px; /* Padding amplio para escritorios */
+    }
+
+    .imagen-movimiento {
+        width: 50%; /* Imagen más pequeña en escritorios */
+    }
+
+    .boton {
+        width: auto; /* Botones con ancho automático en escritorios */
+    }
+}
